@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端常用方法总结 | 刘永勇的博客 ｜ Jakin Blog</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="刘永勇的博客">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.1ba230cd.css" as="style"><link rel="preload" href="/assets/js/app.6642a0df.js" as="script"><link rel="preload" href="/assets/js/6.cc8b7342.js" as="script"><link rel="preload" href="/assets/js/12.caec1b90.js" as="script"><link rel="prefetch" href="/assets/js/10.0bfffa19.js"><link rel="prefetch" href="/assets/js/11.514edb50.js"><link rel="prefetch" href="/assets/js/13.ff19b0dd.js"><link rel="prefetch" href="/assets/js/2.64b8c656.js"><link rel="prefetch" href="/assets/js/3.58b1e4b7.js"><link rel="prefetch" href="/assets/js/4.9b7a5141.js"><link rel="prefetch" href="/assets/js/5.534888fc.js"><link rel="prefetch" href="/assets/js/7.f073eee6.js"><link rel="prefetch" href="/assets/js/8.8ca85ad6.js"><link rel="prefetch" href="/assets/js/9.e4b2f225.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1ba230cd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="global-layout" data-v-7f2e4136><header class="header-container" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(/kobe.jpg);" data-v-93921ff8 data-v-7f2e4136><nav class="navbar" style="position:absolute;opacity:1;transition:all 0.5s ease-in-out;" data-v-93921ff8><a href="/" class="navbar-link router-link-active">
+    Jakin Blog
+  </a> <ul class="navbar-links"><li><a href="/" class="router-link-active">
+        主页
+      </a></li><li><a href="/about/">
+        个人介绍
+      </a></li><li><a href="/tags/">
+        我的标签
+      </a></li></ul> <div id="nav-icon"><span></span><span></span><span></span></div></nav> <div class="header-title" data-v-93921ff8 data-v-93921ff8><h1 data-v-93921ff8>前端常用方法总结</h1> <p data-v-93921ff8></p></div></header> <div class="container" data-v-b3fda33c data-v-7f2e4136><main class="main" style="width:60%;" data-v-b3fda33c><div class="post" data-v-b3fda33c data-v-b3fda33c><article class="main-div"><div class="post-content content content__default"><p>本篇博客主要是对 前端开发中 一些常用的 方法进行总结</p> <h4 id="_1、邮箱检查"><a href="#_1、邮箱检查" class="header-anchor">#</a> 1、邮箱检查</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isEmail = (s) =&gt; {
+    return /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((.[a-zA-Z0-9_-]{2,3}){1,2})$/.test(s)
+}
+</code></pre></div><h4 id="_2、手机号码检查"><a href="#_2、手机号码检查" class="header-anchor">#</a> 2、手机号码检查</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isMobile = (s) =&gt; {
+    return /^1[0-9]{10}$/.test(s)
+}
+</code></pre></div><h4 id="_3、电话号码检查"><a href="#_3、电话号码检查" class="header-anchor">#</a> 3、电话号码检查</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isPhone = (s) =&gt; {
+    return /^([0-9]{3,4}-)?[0-9]{7,8}$/.test(s)
+}
+</code></pre></div><h4 id="_4、url地址检查"><a href="#_4、url地址检查" class="header-anchor">#</a> 4、url地址检查</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isURL = (s) =&gt; {
+    return /^http[s]?:\/\/.*/.test(s)
+}
+</code></pre></div><h4 id="_5、是否字符串"><a href="#_5、是否字符串" class="header-anchor">#</a> 5、是否字符串</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isString = (o) =&gt; {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'String'
+}
+</code></pre></div><h4 id="_6、是否数字"><a href="#_6、是否数字" class="header-anchor">#</a> 6、是否数字</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isNumber = (o) =&gt; {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Number'
+}
+</code></pre></div><h4 id="_7、是否boolean"><a href="#_7、是否boolean" class="header-anchor">#</a> 7、是否boolean</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isBoolean = (o) =&gt; {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Boolean'
+}
+</code></pre></div><h4 id="_8、是否函数"><a href="#_8、是否函数" class="header-anchor">#</a> 8、是否函数</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isFunction = (o) =&gt; {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Function'
+}
+</code></pre></div><h4 id="_9、是否为null"><a href="#_9、是否为null" class="header-anchor">#</a> 9、是否为null</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isNull = (o) =&gt; {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Null'
+}
+</code></pre></div><h4 id="_10、是否undefined"><a href="#_10、是否undefined" class="header-anchor">#</a> 10、是否undefined</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isUndefined = (o) =&gt; {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Undefined'
+}
+</code></pre></div><h4 id="_11、是否对象"><a href="#_11、是否对象" class="header-anchor">#</a> 11、是否对象</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isObj = (o) =&gt; {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Object'
+}
+</code></pre></div><h4 id="_12、是否数组"><a href="#_12、是否数组" class="header-anchor">#</a> 12、是否数组</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isArray = (o) =&gt; {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Array'
+}
+</code></pre></div><h4 id="_13、是否时间"><a href="#_13、是否时间" class="header-anchor">#</a> 13、是否时间</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isDate = (o) =&gt; {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Date'
+}
+</code></pre></div><h4 id="_14、是否正则"><a href="#_14、是否正则" class="header-anchor">#</a> 14、是否正则</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isDate = (o) =&gt; {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Date'
+}
+</code></pre></div><h4 id="_15、是否错误对象"><a href="#_15、是否错误对象" class="header-anchor">#</a> 15、是否错误对象</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isError = (o) =&gt; {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Error'
+}
+</code></pre></div><h4 id="_16、是否symbol函数"><a href="#_16、是否symbol函数" class="header-anchor">#</a> 16、是否Symbol函数</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isSymbol = (o) =&gt; {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Symbol'
+}
+</code></pre></div><h4 id="_17、是否promise对象"><a href="#_17、是否promise对象" class="header-anchor">#</a> 17、是否Promise对象</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isPromise = (o) =&gt; {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Promise'
+}
+</code></pre></div><h4 id="_18、是否set对象"><a href="#_18、是否set对象" class="header-anchor">#</a> 18、是否Set对象</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isSet = (o) =&gt; {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Set'
+}
+</code></pre></div><h4 id="_19、是否是微信浏览器"><a href="#_19、是否是微信浏览器" class="header-anchor">#</a> 19、是否是微信浏览器</h4> <div class="language- extra-class"><pre class="language-text"><code>export const ua = navigator.userAgent.toLowerCase();
+export const isWeiXin = () =&gt; {
+    return ua.match(/microMessenger/i) == 'micromessenger'
+}
+</code></pre></div><h4 id="_20、是否是移动端"><a href="#_20、是否是移动端" class="header-anchor">#</a> 20、是否是移动端</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isDeviceMobile = () =&gt; {
+    return /android|webos|iphone|ipod|balckberry/i.test(ua)
+}
+</code></pre></div><h4 id="_21、是否是qq浏览器"><a href="#_21、是否是qq浏览器" class="header-anchor">#</a> 21、是否是QQ浏览器</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isQQBrowser = () =&gt; {
+    return !!ua.match(/mqqbrowser|qzone|qqbrowser|qbwebviewtype/i)
+}
+</code></pre></div><h4 id="_22、是否是爬虫"><a href="#_22、是否是爬虫" class="header-anchor">#</a> 22、是否是爬虫</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isSpider = () =&gt; {
+    return /adsbot|googlebot|bingbot|msnbot|yandexbot|baidubot|robot|careerbot|seznambot|bot|baiduspider|jikespider|symantecspider|scannerlwebcrawler|crawler|360spider|sosospider|sogou web sprider|sogou orion spider/.test(ua)
+}
+</code></pre></div><h4 id="_23、是否ios"><a href="#_23、是否ios" class="header-anchor">#</a> 23、是否ios</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isIos = () =&gt; {
+    var u = navigator.userAgent;
+    if (u.indexOf('Android') &gt; -1 || u.indexOf('Linux') &gt; -1) {  //安卓手机
+        return false
+    } else if (u.indexOf('iPhone') &gt; -1) {//苹果手机
+        return true
+    } else if (u.indexOf('iPad') &gt; -1) {//iPad
+        return false
+    } else if (u.indexOf('Windows Phone') &gt; -1) {//winphone手机
+        return false
+    } else {
+        return false
+    }
+}
+</code></pre></div><h4 id="_24、是否为pc端"><a href="#_24、是否为pc端" class="header-anchor">#</a> 24、是否为PC端</h4> <div class="language- extra-class"><pre class="language-text"><code>export const isPC = () =&gt; {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = [&quot;Android&quot;, &quot;iPhone&quot;,
+        &quot;SymbianOS&quot;, &quot;Windows Phone&quot;,
+        &quot;iPad&quot;, &quot;iPod&quot;];
+    var flag = true;
+    for (var v = 0; v &lt; Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) &gt; 0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
+</code></pre></div><h4 id="_25、去除html标签"><a href="#_25、去除html标签" class="header-anchor">#</a> 25、去除html标签</h4> <div class="language- extra-class"><pre class="language-text"><code>export const removeHtmltag = (str) =&gt; {
+    return str.replace(/&lt;[^&gt;]+&gt;/g, '')
+}
+</code></pre></div><h4 id="_26、获取url参数"><a href="#_26、获取url参数" class="header-anchor">#</a> 26、获取url参数</h4> <div class="language- extra-class"><pre class="language-text"><code>export const getQueryString = (name) =&gt; {
+    const reg = new RegExp('(^|&amp;)' + name + '=([^&amp;]*)(&amp;|$)', 'i');
+    const search = window.location.search.split('?')[1] || '';
+    const r = search.match(reg) || [];
+    return r[2];
+}
+</code></pre></div></div></article> <div class="main-div vssue"><!----></div></div></main> <aside class="aside" data-v-b3fda33c data-v-b3fda33c><div class="info-card main-div" data-v-1311ce9e data-v-b3fda33c><div class="info-card-header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(/avatar-bg.jpeg);" data-v-1311ce9e><img src="/avatar-top.jpg" alt="Jakin" class="info-avatar" data-v-1311ce9e></div> <div class="info-card-body" data-v-1311ce9e><section class="info-name" data-v-1311ce9e>
+      Jakin
+    </section> <section class="info-desc" data-v-1311ce9e>曾经我也是一个前端开发，后来的某一天大佬让我尝试去写后端，然后就写了Node.js</section> <section class="info-contact" data-v-1311ce9e><section data-v-1311ce9e><span data-v-1311ce9e data-v-1311ce9e><svg class="icon" style="font-size:1em;" data-v-1311ce9e data-v-1311ce9e><use xlink:href="#icon-location" data-v-1311ce9e data-v-1311ce9e></use></svg><span class="info-text" data-v-1311ce9e data-v-1311ce9e>
+          Guangzhou, China
+        </span></span></section> <!----> <section data-v-1311ce9e><span data-v-1311ce9e data-v-1311ce9e><svg class="icon" style="font-size:1em;" data-v-1311ce9e data-v-1311ce9e><use xlink:href="#icon-email" data-v-1311ce9e data-v-1311ce9e></use></svg><span class="info-text" data-v-1311ce9e data-v-1311ce9e>
+          liu13560176910@163.com
+        </span></span></section></section></div> <div class="info-card-footer" data-v-1311ce9e><p class="footer-sns-link" data-v-1311ce9e><a target="_blank" href="https://github.com/Jakin-Liu" class="sns-link" data-v-1311ce9e><span class="sns-icon" data-v-1311ce9e data-v-1311ce9e><svg class="icon" style="font-size:35px;" data-v-1311ce9e data-v-1311ce9e><use xlink:href="#icon-github" data-v-1311ce9e data-v-1311ce9e></use></svg></span></a></p></div></div> <div class="post-toc main-div aside-toc" style="position:relative;top:0;width:0px;" data-v-b3fda33c><h4>- CATALOG</h4> <!----></div></aside></div> <footer class="footer" data-v-7f2e4136><p class="footer-sns-link"><a target="_blank" href="https://github.com/Jakin-Liu" class="sns-link"><span class="sns-icon"><svg class="icon" style="font-size:40px;"><use xlink:href="#icon-github"></use></svg></span></a></p> <div class="copyright"><span id="custom"></span> <!----></div></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.6642a0df.js" defer></script><script src="/assets/js/6.cc8b7342.js" defer></script><script src="/assets/js/12.caec1b90.js" defer></script>
+  </body>
+</html>
